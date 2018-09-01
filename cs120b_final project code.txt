@@ -263,20 +263,10 @@ int winLose_checkSM(int state){
 			cntr = 0;
 			
 		}
-		if (((~x_pos | ~plyr_pos) == ~x_pos) && (lives > 0) && cntr >= 35)
+		if (plyr_pos == plyr_pos2)
 		{
-			lives--;
-			cntr = 0;
-			
+			state = gameLost_state;
 		}
-		if ((~x_pos | ~plyr_pos) == ~x_pos)
-		{
-			PORTD = PORTD ^ 0x08;
-		}
-// 		if (plyr_pos == plyr_pos2)
-// 		{
-// 			state = gameLost_state;
-// 		}
 		else if(lives == 0){
 			state = gameLost_state;
 		}
